@@ -298,75 +298,19 @@ function App() {
             <p className="text-xl opacity-90">Seberapa tahu kamu tentang kemerdekaan Indonesia?</p>
           </div>
           
-          {!quizStarted ? (
-            <div className="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
-              <h3 className="text-2xl font-semibold mb-4">Siap untuk tantangan?</h3>
-              <p className="text-lg opacity-90 mb-6">
-                {quizQuestions.length} pertanyaan menanti untuk menguji pengetahuan kamu!
+          <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 overflow-hidden">
+            <img 
+              src="https://fhouvucedreehcupbyua.supabase.co/storage/v1/object/public/galeri1/Merah%20Putih%20Modern%20Background%20Panggung%20Acara%20Semarak%20HUT%20RI%20Spanduk%20Banner_page-0001.jpg"
+              alt="Spanduk HUT RI - Semarak Perayaan Kemerdekaan Indonesia"
+              className="w-full h-auto rounded-xl shadow-2xl hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              loading="lazy"
+            />
+            <div className="mt-6 text-center">
+              <p className="text-lg opacity-90">
+                Spanduk resmi perayaan HUT RI dengan desain modern yang memadukan warna merah putih
               </p>
-              <button
-                onClick={() => setQuizStarted(true)}
-                className="bg-yellow-400 hover:bg-yellow-500 text-red-800 font-bold py-4 px-8 rounded-full text-xl transition-all duration-300 transform hover:scale-105"
-              >
-                Mulai Kuis
-              </button>
             </div>
-          ) : quizFinished ? (
-            <div className="text-center bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
-              <Trophy className="w-20 h-20 mx-auto mb-4 text-yellow-400" />
-              <h3 className="text-3xl font-bold mb-4">Kuis Selesai!</h3>
-              <p className="text-2xl mb-4">Skor kamu: {score}/{quizQuestions.length}</p>
-              <p className="text-lg opacity-90 mb-6">
-                {score === quizQuestions.length ? "Sempurna! Kamu benar-benar paham sejarah Indonesia!" :
-                 score >= quizQuestions.length * 0.7 ? "Bagus sekali! Pengetahuan kamu sudah cukup baik." :
-                 "Tetap semangat! Belajar lagi tentang sejarah Indonesia ya!"}
-              </p>
-              <button
-                onClick={resetQuiz}
-                className="bg-yellow-400 hover:bg-yellow-500 text-red-800 font-bold py-3 px-6 rounded-full transition-all duration-300"
-              >
-                Ulangi Kuis
-              </button>
-            </div>
-          ) : (
-            <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8">
-              <div className="mb-6">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-lg">Pertanyaan {currentQuiz + 1} dari {quizQuestions.length}</span>
-                  <span className="text-lg">Skor: {score}</span>
-                </div>
-                <div className="w-full bg-white bg-opacity-20 rounded-full h-2">
-                  <div
-                    className="bg-yellow-400 h-2 rounded-full transition-all duration-300"
-                    style={{ width: `${((currentQuiz + 1) / quizQuestions.length) * 100}%` }}
-                  ></div>
-                </div>
-              </div>
-              
-              <h3 className="text-2xl font-semibold mb-6">{quizQuestions[currentQuiz].question}</h3>
-              
-              <div className="grid grid-cols-1 gap-4">
-                {quizQuestions[currentQuiz].options.map((option, index) => (
-                  <button
-                    key={index}
-                    onClick={() => handleQuizAnswer(index)}
-                    disabled={showResult}
-                    className={`p-4 rounded-lg text-left transition-all duration-300 ${
-                      showResult
-                        ? index === quizQuestions[currentQuiz].correct
-                          ? 'bg-green-500 bg-opacity-80'
-                          : index === selectedAnswer
-                          ? 'bg-red-500 bg-opacity-80'
-                          : 'bg-white bg-opacity-20'
-                        : 'bg-white bg-opacity-20 hover:bg-opacity-30 transform hover:scale-105'
-                    }`}
-                  >
-                    {option}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
+          </div>
         </div>
       </section>
 
