@@ -37,10 +37,19 @@ const heroes = [
 ];
 
 const timeline = [
-  { year: '1945', event: 'Proklamasi Kemerdekaan Indonesia', description: '17 Agustus 1945, Soekarno-Hatta memproklamasikan kemerdekaan' },
-  { year: '1945', event: 'Pembentukan PPKI', description: 'Panitia Persiapan Kemerdekaan Indonesia dibentuk' },
-  { year: '1945', event: 'Konstitusi Pertama', description: 'UUD 1945 disahkan sebagai konstitusi pertama' },
-  { year: '1949', event: 'Pengakuan Kedaulatan', description: 'Belanda mengakui kedaulatan Indonesia' }
+  // 16 Agustus 2025 (Sabtu)
+  { time: '07.45 – 08.00', event: 'Pembukaan Acara', description: '16 Agustus 2025 (Sabtu)', isDate: true },
+  { time: '08.00 – 08.30', event: 'Lomba Bendera Tingkat TK/PAUD', description: 'Kompetisi untuk anak-anak usia dini' },
+  { time: '08.30 – 09.00', event: 'Lomba Kelereng', description: 'Permainan tradisional Indonesia' },
+  { time: '09.00 – 09.30', event: 'Lomba Makan Kerupuk', description: 'Lomba makan kerupuk tanpa menggunakan tangan' },
+  { time: '09.30 – 10.00', event: 'Lomba Balap Karung', description: 'Lomba lari menggunakan karung goni' },
+  { time: '10.00 – 10.30', event: 'Lomba Memecahkan Balon', description: 'Kompetisi memecahkan balon dengan cara unik' },
+  { time: '10.30 – 11.00', event: 'Lomba Memindahkan Tepung', description: 'Lomba memindahkan tepung dengan sendok' },
+  { time: '12.00 – 16.00', event: 'I S T I R A H A T', description: 'Waktu istirahat dan makan siang' },
+  { time: '16.00 – 16.30', event: 'Lomba Sepeda Hias / Karnaval', description: 'Karnaval keliling Cluster Kalita' },
+  { time: '16.30 – 17.00', event: 'Penutupan Hari Pertama', description: 'Penutupan acara hari pertama' },
+  // 17 Agustus 2025 (Minggu)
+  { time: '19.40 – Selesai', event: 'Tasyakuran & Pembagian Hadiah', description: '17 Agustus 2025 (Minggu)', isDate: true }
 ];
 
 const quizQuestions = [
@@ -233,8 +242,8 @@ function App() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <Calendar className="w-16 h-16 mx-auto mb-4 text-red-600" />
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Timeline Kemerdekaan</h2>
-            <p className="text-xl text-gray-600">Perjalanan menuju Indonesia Merdeka</p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">📅 Timeline Acara – 16 & 17 Agustus 2025</h2>
+            <p className="text-xl text-gray-600">Jadwal lengkap perayaan HUT RI di Cluster Kalita</p>
           </div>
           
           <div className="relative">
@@ -243,14 +252,24 @@ function App() {
             {timeline.map((item, index) => (
               <div key={index} className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                 <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                  <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300">
-                    <div className="text-2xl font-bold text-red-700 mb-2">{item.year}</div>
+                  <div className={`p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 ${
+                    item.isDate 
+                      ? 'bg-gradient-to-br from-red-500 to-red-600 text-white' 
+                      : item.event === 'I S T I R A H A T'
+                        ? 'bg-gradient-to-br from-yellow-50 to-yellow-100'
+                        : 'bg-gradient-to-br from-red-50 to-red-100'
+                  }`}>
+                    <div className={`text-lg font-bold mb-2 ${
+                      item.isDate ? 'text-yellow-200' : 'text-red-700'
+                    }`}>{item.time}</div>
                     <h3 className="text-xl font-semibold text-gray-800 mb-2">{item.event}</h3>
                     <p className="text-gray-600">{item.description}</p>
                   </div>
                 </div>
                 
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-red-600 rounded-full border-4 border-white shadow-lg"></div>
+                <div className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full border-4 border-white shadow-lg ${
+                  item.isDate ? 'bg-red-700' : 'bg-red-600'
+                }`}></div>
               </div>
             ))}
           </div>
