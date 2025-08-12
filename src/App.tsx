@@ -276,34 +276,63 @@ function App() {
         </div>
       </section>
 
-      {/* Heroes Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+      {/* Important Notes Section */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-blue-100">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
-            <Heart className="w-16 h-16 mx-auto mb-4 text-red-600" />
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Pahlawan Nasional</h2>
-            <p className="text-xl text-gray-600">Mengenang jasa para pejuang kemerdekaan</p>
+            <Trophy className="w-16 h-16 mx-auto mb-4 text-blue-600" />
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">📝 Catatan Penting</h2>
+            <p className="text-xl text-gray-600">Informasi penting untuk semua peserta</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {heroes.map((hero, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 overflow-hidden">
-                <div className="h-48 bg-gradient-to-br from-red-400 to-red-600 relative overflow-hidden">
-                  <img 
-                    src={hero.image} 
-                    alt={hero.name}
-                    className="w-full h-full object-cover opacity-80"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">{hero.name}</h3>
-                  <p className="text-red-600 font-semibold mb-2">{hero.role}</p>
-                  <p className="text-sm text-gray-500 mb-3">{hero.birth}</p>
-                  <p className="text-sm text-gray-600">{hero.achievement}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8">
+              <div className="flex items-start mb-4">
+                <Clock className="w-8 h-8 text-blue-600 mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Waktu Kedatangan</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Peserta lomba diharapkan hadir <strong>30 menit sebelum lomba dimulai</strong> untuk persiapan dan briefing.
+                  </p>
                 </div>
               </div>
-            ))}
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8">
+              <div className="flex items-start mb-4">
+                <Trophy className="w-8 h-8 text-green-600 mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Karnaval Sepeda Hias</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Bagi peserta Karnaval Sepeda Hias, harap membawa sepeda yang sudah <strong>dihias sesuai tema kemerdekaan</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8">
+              <div className="flex items-start mb-4">
+                <Users className="w-8 h-8 text-orange-600 mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Konsumsi</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Panitia menyediakan <strong>konsumsi untuk peserta dan penonton</strong> selama acara berlangsung.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-8">
+              <div className="flex items-start mb-4">
+                <Heart className="w-8 h-8 text-red-600 mr-4 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Kebersihan & Ketertiban</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Tetap jaga <strong>kebersihan & ketertiban</strong> selama acara berlangsung untuk kenyamanan bersama.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
