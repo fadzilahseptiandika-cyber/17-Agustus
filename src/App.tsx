@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, Clock, Trophy, Users, Flag, Heart, Star, ArrowRight, ChevronDown, Award } from 'lucide-react';
+import { Calendar, Clock, Trophy, Users, Flag, Heart, Star, ArrowRight, ChevronDown, Award, MessageCircle } from 'lucide-react';
 import RegistrationForm from './components/RegistrationForm';
 import ParticipantTable from './components/ParticipantTable';
 import { getParticipantsWithCompetitions, getParticipantCount, getCompetitionStats, RegistrationFormData } from './services/competitionService';
@@ -187,6 +187,12 @@ function App() {
     await loadData();
   };
 
+  const handleWhatsAppClick = () => {
+    const phoneNumber = '6281234567890'; // Ganti dengan nomor WhatsApp yang sesuai
+    const message = encodeURIComponent('Halo! Saya ingin bertanya tentang acara 17 Agustus di Cluster Kalita.');
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 to-white">
       {/* Hero Section */}
@@ -491,6 +497,17 @@ function App() {
         onClose={() => setShowRegistrationForm(false)} 
         onSubmit={handleRegistrationSubmit}
       />
+      
+      {/* WhatsApp Chat Button */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <button
+          onClick={handleWhatsAppClick}
+          className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl hover:shadow-xl transition-all duration-300 transform hover:scale-110 animate-pulse"
+          title="Chat via WhatsApp"
+        >
+          <MessageCircle className="w-8 h-8" />
+        </button>
+      </div>
     </div>
   );
 }
