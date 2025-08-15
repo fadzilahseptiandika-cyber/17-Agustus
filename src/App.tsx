@@ -85,6 +85,15 @@ const competitions = [
   { name: 'Lomba Tarik Tambang', winner: '-', time: '-' }
 ];
 
+const donors = [
+  { name: 'Bapak Ahmad Rizki', amount: 'Rp 500.000', date: '10 Agustus 2025' },
+  { name: 'Ibu Siti Nurhaliza', amount: 'Rp 300.000', date: '11 Agustus 2025' },
+  { name: 'Keluarga Budi Santoso', amount: 'Rp 750.000', date: '12 Agustus 2025' },
+  { name: 'RT 05 Blok A', amount: 'Rp 1.000.000', date: '13 Agustus 2025' },
+  { name: 'Ibu Dewi Kartika', amount: 'Rp 200.000', date: '14 Agustus 2025' },
+  { name: 'Bapak Andi Wijaya', amount: 'Rp 400.000', date: '15 Agustus 2025' }
+];
+
 function App() {
   const [currentQuiz, setCurrentQuiz] = useState(0);
   const [score, setScore] = useState(0);
@@ -196,6 +205,14 @@ function App() {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
+
+  const handleDonationClick = () => {
+    const phoneNumber = '6282260711961';
+    const message = encodeURIComponent('Halo! Saya ingin berdonasi untuk acara 17 Agustus di Cluster Kalita. Mohon informasi cara donasi dan rekening yang bisa digunakan.');
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 to-white">
       {/* Hero Section */}
@@ -445,6 +462,75 @@ function App() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Donation Section */}
+      <section className="py-20 bg-gradient-to-br from-green-50 to-green-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <Heart className="w-16 h-16 mx-auto mb-4 text-green-600" />
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">💝 Donasi & Dukungan</h2>
+            <p className="text-xl text-gray-600 mb-8">Terima kasih kepada para donatur yang telah mendukung acara 17 Agustus</p>
+            
+            <button
+              onClick={handleDonationClick}
+              className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mb-12"
+            >
+              💚 Donasi Sekarang
+            </button>
+          </div>
+          
+          <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="bg-gradient-to-r from-green-600 to-green-700 text-white p-6">
+              <h3 className="text-2xl font-bold flex items-center">
+                <Trophy className="w-6 h-6 mr-2" />
+                Daftar Donatur
+              </h3>
+              <p className="opacity-90 mt-2">Para dermawan yang telah berkontribusi</p>
+            </div>
+            
+            <div className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {donors.map((donor, index) => (
+                  <div key={index} className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200 hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-start justify-between mb-3">
+                      <div className="flex-1">
+                        <h4 className="font-bold text-gray-800 text-lg mb-1">{donor.name}</h4>
+                        <p className="text-green-600 font-semibold text-xl">{donor.amount}</p>
+                      </div>
+                      <div className="text-3xl">🙏</div>
+                    </div>
+                    <p className="text-gray-500 text-sm flex items-center">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      {donor.date}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="mt-8 p-6 bg-gradient-to-r from-green-100 to-green-200 rounded-xl text-center">
+                <h4 className="text-xl font-bold text-green-800 mb-2">Total Donasi Terkumpul</h4>
+                <p className="text-3xl font-bold text-green-600">Rp 3.150.000</p>
+                <p className="text-green-700 mt-2">Dari {donors.length} donatur yang mulia hati</p>
+              </div>
+              
+              <div className="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                <div className="flex items-start">
+                  <div className="flex-shrink-0">
+                    <Heart className="w-6 h-6 text-yellow-600" />
+                  </div>
+                  <div className="ml-3">
+                    <h4 className="text-lg font-semibold text-yellow-800">Cara Berdonasi</h4>
+                    <p className="text-yellow-700 mt-1">
+                      Klik tombol "Donasi Sekarang" di atas untuk menghubungi panitia melalui WhatsApp. 
+                      Kami akan memberikan informasi rekening dan cara donasi yang mudah dan aman.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
