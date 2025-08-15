@@ -76,10 +76,13 @@ const quizQuestions = [
 ];
 
 const competitions = [
-  { name: 'Lomba Makan Kerupuk', winner: 'Ahmad Rizki', time: '45 detik' },
-  { name: 'Lomba Balap Karung', winner: 'Siti Nurhaliza', time: '1 menit 20 detik' },
-  { name: 'Lomba Panjat Pinang', winner: 'Tim Garuda', time: '3 menit 15 detik' },
-  { name: 'Lomba Tarik Tambang', winner: 'RT 05', time: '2 menit 30 detik' }
+  { name: 'Lomba Makan Kerupuk', winner: '', time: '-' },
+  { name: 'Lomba Balap Karung', winner: '', time: '-' },
+  { name: 'Lomba Memecahkan Balon', winner: '-', time: '-' },
+  { name: 'Lomba Memecahkan Bendera', winner: '-', time: '-' },
+  { name: 'Lomba Memecahkan Kelereng', winner: '-', time: '-' },
+  { name: 'Lomba Memecahkan Balon', winner: '-', time: '-' },
+  { name: 'Lomba Tarik Tambang', winner: '-', time: '-' }
 ];
 
 function App() {
