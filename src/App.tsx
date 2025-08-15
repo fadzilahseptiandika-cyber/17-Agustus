@@ -44,12 +44,12 @@ const timeline = [
   { time: '09.00 – 09.30', event: 'Lomba Makan Kerupuk', description: 'Lomba makan kerupuk tanpa menggunakan tangan' },
   { time: '09.30 – 10.00', event: 'Lomba Balap Karung', description: 'Lomba lari menggunakan karung goni' },
   { time: '10.00 – 10.30', event: 'Lomba Memecahkan Balon', description: 'Kompetisi memecahkan balon dengan cara unik' },
-  { time: '10.30 – 11.00', event: 'Lomba Memindahkan Tepung', description: 'Lomba memindahkan tepung dengan sendok' },
+  { time: '10.30 – 11.00', event: 'Lomba Memindahkan Air', description: 'Lomba memindahkan Air Ember Ke Ember' },
   { time: '12.00 – 16.00', event: 'I S T I R A H A T', description: 'Waktu istirahat dan makan siang' },
   { time: '16.00 – 16.30', event: 'Lomba Sepeda Hias / Karnaval', description: 'Karnaval keliling Cluster Kalita' },
   { time: '16.30 – 17.00', event: 'Penutupan Hari Pertama', description: 'Penutupan acara hari pertama' },
   // 17 Agustus 2025 (Minggu)
-  { time: '19.40 – Selesai', event: 'Tasyakuran & Pembagian Hadiah', description: '17 Agustus 2025 (Minggu)', isDate: true }
+  { time: '20.00 – Selesai', event: 'Tasyakuran & Pembagian Hadiah', description: '17 Agustus 2025 (Minggu)', isDate: true }
 ];
 
 const quizQuestions = [
@@ -348,8 +348,8 @@ function App() {
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
             <Star className="w-16 h-16 mx-auto mb-4" />
-            <h2 className="text-4xl font-bold mb-4">Kuis Indonesia</h2>
-            <p className="text-xl opacity-90">Seberapa tahu kamu tentang kemerdekaan Indonesia?</p>
+            <h2 className="text-4xl font-bold mb-4">Cluster Kalita</h2>
+            <p className="text-xl opacity-90">Merdekaaaaaa!!!!!</p>
           </div>
           
           <div className="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-8 overflow-hidden">
@@ -373,8 +373,8 @@ function App() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <Users className="w-16 h-16 mx-auto mb-4 text-red-600" />
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Indonesia Hari Ini</h2>
-            <p className="text-xl text-gray-600">Fakta menarik tentang Indonesia</p>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Info Hari Ini</h2>
+            <p className="text-xl text-gray-600">Daftarkan Segera</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

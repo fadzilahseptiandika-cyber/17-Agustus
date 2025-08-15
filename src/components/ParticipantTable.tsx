@@ -14,7 +14,8 @@ const competitionNames: { [key: string]: string } = {
   'lomba-balap-karung': 'Lomba Balap Karung',
   'lomba-memecahkan-balon': 'Lomba Memecahkan Balon',
   'lomba-joget-balon': 'Lomba Joget Balon',
-  'lomba-memindahkan-tepung': 'Lomba Memindahkan Tepung'
+  'lomba-memindahkan-air': 'Lomba Memindahkan Air',
+  'lomba-tarik-tambang': 'Lomba Tarik Tambang'
 };
 
 export default function ParticipantTable({ participants }: ParticipantTableProps) {

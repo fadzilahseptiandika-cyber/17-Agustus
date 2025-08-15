@@ -180,7 +180,8 @@ export async function getParticipantsWithCompetitions(): Promise<ParticipantWith
       ['Lomba Balap Karung', 'lomba-balap-karung'],
       ['Lomba Memecahkan Balon', 'lomba-memecahkan-balon'],
       ['Lomba Joget Balon', 'lomba-joget-balon'],
-      ['Lomba Memindahkan Tepung', 'lomba-memindahkan-tepung']
+      ['Lomba Memindahkan Air', 'lomba-memindahkan-air'],
+      ['Lomba Tarik Tambang', 'lomba-tarik-tambang']
     ]);
 
     // Transform participants data

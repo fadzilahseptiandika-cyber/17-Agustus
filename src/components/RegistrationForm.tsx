@@ -22,7 +22,8 @@ const adultIndividualCompetitions = [
 
 const adultGroupCompetitions = [
   { id: 'lomba-joget-balon', name: 'Lomba Joget Balon' },
-  { id: 'lomba-memindahkan-tepung', name: 'Lomba Memindahkan Tepung' }
+  { id: 'lomba-memindahkan-air', name: 'Lomba Memindahkan Air' },
+  { id: 'lomba-tarik-tambang', name: 'Lomba Tarik Tambang' }
 ];
 
 export default function RegistrationForm({ isOpen, onClose, onSubmit }: RegistrationFormProps) {
