@@ -79,9 +79,9 @@ const competitions = [
   { name: 'Lomba Makan Kerupuk', winner: '', time: '-' },
   { name: 'Lomba Balap Karung', winner: '', time: '-' },
   { name: 'Lomba Memecahkan Balon', winner: '-', time: '-' },
-  { name: 'Lomba Memecahkan Bendera', winner: '-', time: '-' },
-  { name: 'Lomba Memecahkan Kelereng', winner: '-', time: '-' },
-  { name: 'Lomba Memecahkan Balon', winner: '-', time: '-' },
+  { name: 'Lomba Bendera', winner: '-', time: '-' },
+  { name: 'Lomba Kelereng', winner: '-', time: '-' },
+  { name: 'Lomba Memindahkan Air', winner: '-', time: '-' },
   { name: 'Lomba Tarik Tambang', winner: '-', time: '-' }
 ];
 
